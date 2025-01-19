@@ -17,5 +17,3 @@ Zaawansowany podglad:
     - Tytul
     - Treść maila (moze scrollable, aby chociaz czesc sie zmiescila), tez opcjonalnie
     - Dowolny przycisk, wyjscie z podgladu
-
-

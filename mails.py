@@ -27,7 +27,7 @@ class MailManager:
         return len(self.emails)
 
 
-mm = MailManager()
-while True:
-    print(mm.check_for_new_emails())
-    time.sleep(10)
+# mm = MailManager()
+# while True:
+#     print(mm.check_for_new_emails())
+#     time.sleep(10)
