@@ -32,7 +32,7 @@ class DisplayManager:
         self.rows = [0, 12, 24, 36, 48]
         self.current_line = 0
         self.email_lines = []
-        self.subject_flag = False
+        self.short_subject_flag = False
 
     def check_for_new_email(self):
         """Checks for new emails every interval to avoid api rate limit"""
@@ -95,10 +95,12 @@ class DisplayManager:
         text_width = math.ceil(draw.textlength(text, font=self.font))
         text_height = self.font.size + 3  # Adding 3 for clearance (1 and 2 do not work for some forsaken reason ;) )
 
-        if text_width <= width and not self.subject_flag:
+        if text_width <= width and not self.short_subject_flag:
             draw.text((0, y_position), text, font=self.font, fill=fill)
-            self.subject_flag = True
+            self.short_subject_flag = True
             return
+        else:
+            self.short_subject_flag = False
 
         for offset in range(0, text_width - width + 1):
             draw.rectangle([(0, y_position), (width, y_position + text_height)], fill="BLACK")
