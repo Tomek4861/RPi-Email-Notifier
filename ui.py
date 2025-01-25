@@ -5,7 +5,7 @@ import time
 import lib.oled.SSD1331 as SSD1331
 
 from PIL import Image, ImageDraw, ImageFont
-from config import buttonRed, buttonGreen, encoderLeft, encoderRight  # , buzzer
+from config import buttonRed, buttonGreen, encoderLeft, encoderRight, buzzerPin, led1, led2, led3, led4
 import RPi.GPIO as GPIO
 from simplegmail.message import Message
 from button_handler import ButtonHandler
@@ -50,20 +50,19 @@ class DisplayManager:
 
     @staticmethod
     def make_sound_and_blink_leds():
-        # TODO: Check/Implement
+        # TODO: Check
         print("Function make_sound_and_blink_leds")
-        # buzzer(True)
-        # GPIO.output(led1, 1)
-        # GPIO.output(led2, 1)
-        # GPIO.output(led3, 1)
-        # GPIO.output(led4, 1)
-        # time.sleep(1)
-        # buzzer(False)
-        # GPIO.output(led1, 0)
-        # GPIO.output(led2, 0)
-        # GPIO.output(led3, 0)
-        # GPIO.output(led4, 0)
-        pass
+        GPIO.output(buzzerPin, False)
+        GPIO.output(led1, 1)
+        GPIO.output(led2, 1)
+        GPIO.output(led3, 1)
+        GPIO.output(led4, 1)
+        time.sleep(1)
+        GPIO.output(buzzerPin, True)
+        GPIO.output(led1, 0)
+        GPIO.output(led2, 0)
+        GPIO.output(led3, 0)
+        GPIO.output(led4, 0)
 
     def is_red_button_pressed(self):
         return self.button_handler.is_button_pressed(buttonRed)
