@@ -5,7 +5,7 @@
 ## Overview  
 
 This project is an **email notification system** for **Raspberry Pi** with an **OLED SSD1331 display**.  
-It displays emails on a compact screen and provides sound and LED alerts for new messages. Users can browse unread emails using buttons and a rotary encoder.  
+Displays new emails on an OLED screen with sound and LED notifications. Users can navigate unread messages using buttons and a rotary encoder.
 
 
 ## Features  
@@ -35,7 +35,7 @@ pip install simplegmail
 ```
 
 ### 4. Gmail API Setup  
-Follow [this guide](https://github.com/jeremyephron/simplegmail) to set up **OAuth credentials** for Gmail access and input `client_secret.json` file in the root of the project directory.  
+Follow [this guide](https://github.com/jeremyephron/simplegmail) to set up **Gmail OAuth credentials**. Place the `client_secret.json` file in the project's root directory.  
 
 ### 5. Run the Project  
 ```bash
