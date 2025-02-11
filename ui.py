@@ -48,9 +48,9 @@ class DisplayManager:
                 return new_emails[0]
         return None
 
-    @staticmethod
-    def make_sound_and_blink_leds():
-        print("Function make_sound_and_blink_leds")
+    def make_sound_and_blink_leds(self):
+        if self.do_not_disturb:
+            return
         GPIO.output(buzzerPin, False)
         GPIO.output(led1, 1)
         GPIO.output(led2, 1)
