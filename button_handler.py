@@ -16,7 +16,7 @@ class ButtonHandler:
 
     def is_button_pressed(self, button):
         current_time = time.time()
-        if GPIO.input(button) == GPIO.LOW:  #
+        if GPIO.input(button) == GPIO.LOW:  # button is pressed
             if current_time - self.last_button_press_time[button] > self.debounce_period:
                 self.last_button_press_time[button] = current_time
                 return True

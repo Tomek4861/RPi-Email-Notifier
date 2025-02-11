@@ -50,7 +50,6 @@ class DisplayManager:
 
     @staticmethod
     def make_sound_and_blink_leds():
-        # TODO: Check
         print("Function make_sound_and_blink_leds")
         GPIO.output(buzzerPin, False)
         GPIO.output(led1, 1)
@@ -70,16 +69,7 @@ class DisplayManager:
     def is_green_button_pressed(self):
         return self.button_handler.is_button_pressed(buttonGreen)
 
-    # def turn_encoder(self, channel):
-    #     # It should work if encoder is present, for now using Arrows Up & Down in debug_turn
-    #     print("Channel", channel)
-    #     if channel == encoderLeft:  # Scrolling up
-    #         self.current_line = max(0, self.current_line - 1)
-    #     elif channel == encoderRight:  # Scrolling down
-    #         self.current_line = min(len(self.email_lines) - 1, self.current_line + 1)
-
     def turn_encoder(self, channel):
-        # Still sometimes is messy, maybe debouncing needed
         encoder_left_current_state = GPIO.input(encoderLeft)
         encoder_right_current_state = GPIO.input(encoderRight)
 
@@ -106,7 +96,7 @@ class DisplayManager:
 
     @staticmethod
     def clear_display_draw(draw):
-        draw.rectangle([(5, 5), (90, 30)], fill="BLACK")
+        draw.rectangle([(0, 0), (90, 30)], fill="BLACK")
 
     def scroll_text_horizontally(self, draw, text, y_position, fill="WHITE"):
         """Scrolls text horizontally if it's too long for the display."""
@@ -233,22 +223,3 @@ class DisplayManager:
             time.sleep(0.1)
 
 
-def debug():
-    from simplegmail import Gmail
-    messages = Gmail().get_messages()
-
-    display = DisplayManager()
-    import threading
-    # threading.Thread(target=display.debug_turn, daemon=True).start()
-    # mails = display.mail_manager.check_for_new_emails()  # Empty so fetching all emails
-    # # display.display_email(messages[1])
-    # display.display_preview(messages[0])
-    # display.display_home_screen()
-    # time.sleep(100)
-    display.main_loop()
-
-
-if __name__ == "__main__":
-    debug()
-
-# TODO: Consider checking emails in a separate thread (on raspberry pi check takes a while)
