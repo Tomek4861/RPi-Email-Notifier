@@ -1,11 +1,12 @@
 # Raspberry Pi Email Notifier  
 
-<img src="PPPPP" alt="Project Image 1" width="400">
+<img src="https://github.com/user-attachments/assets/53349920-bfc3-475f-bda0-687abebd3f2c" alt="Project Image 1" width="400">
 
 ## Overview  
 
 This project is an **email notification system** for **Raspberry Pi** with an **OLED SSD1331 display**.  
 It displays emails on a compact screen and provides sound and LED alerts for new messages. Users can browse unread emails using buttons and a rotary encoder.  
+
 ---
 
 ## Features  
@@ -80,4 +81,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) fi
 - **[Tomek4861](https://github.com/Tomek4861)**
 - **[tymek805](https://github.com/tymek805)**
 
-<img src="PPPPP" alt="Project Image 2" width="400">
+<img src="https://github.com/user-attachments/assets/42b69907-5f14-4d58-9579-053890a53395" alt="Project Image 2" width="400">
