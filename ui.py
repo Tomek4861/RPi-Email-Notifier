@@ -183,7 +183,7 @@ class DisplayManager:
         image = Image.new("RGB", (self.display.width, self.display.height), "BLACK")
         draw = ImageDraw.Draw(image)
         self.clear_display_draw(draw)
-        draw.text((0, 12), f"Unread Email: {self.mail_manager.email_count}", font=self.font, fill="WHITE")
+        draw.text((0, 12), f"Unread Email: {self.mail_manager.unread_email_count}", font=self.font, fill="WHITE")
         draw.text((0, 36), f"Not Disturb:{do_not_disturb_statuses[self.do_not_disturb]}", font=self.font, fill="WHITE")
         self.display.ShowImage(image, 0, 0)
 
