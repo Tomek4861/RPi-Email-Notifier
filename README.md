@@ -4,7 +4,8 @@
 
 ## Overview  
 
-This project is an **email notification system** for **Raspberry Pi** with an **OLED SSD1331 display**.It displays new emails on an OLED screen with sound and LED notifications. Users can navigate unread messages using buttons and a rotary encoder.
+This project is an **email notification system** for **Raspberry Pi** with an **OLED SSD1331 display**.
+It displays new emails on an OLED screen with sound and LED notifications. Users can navigate unread messages using buttons and a rotary encoder.
 
 
 ## Features  
